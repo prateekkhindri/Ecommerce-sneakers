@@ -58,3 +58,44 @@ const productArray = [
     unitPrice: "2000",
   },
 ];
+
+// 2. Loop through each item of the array and display them on screen
+
+const renderProductList = (productArray) => {
+  let htmlElements = "";
+
+  productArray.map((item) => {
+    htmlElements += `
+       <div
+            class="col col-12 col-sm-6 col-md-4 col-lg-3 gy-5 card-item text-center"
+          >
+            <div class="card">
+              <img
+                src=${item.productImg}
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">${item.productName}</h5>
+                <p class="card-text px-3 fw-bold"><span>AUD </span>${item.unitPrice}</p>
+                <hr />
+
+                <div class="d-inline-flex align-items-center">
+                  <label for="quantity" class="me-2 w-75">Quantity</label>
+                  <input
+                    type="number"
+                    name="quantity"
+                    min="1"
+                    class="form-control w-50 ms-5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+      `;
+  });
+
+  document.getElementById("productDisplaySection").innerHTML = htmlElements;
+};
+
+renderProductList(productArray);
