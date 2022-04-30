@@ -41,22 +41,33 @@ h2 {
 
 form img {
   height: 220px !important;
-  border: 2px solid black;
+  border: 0.5px solid;
+  border-radius: 5px;
 }
 
 .card-item {
   cursor: pointer;
-  /* transition: transform 200ms ease; */
+  /* border-radius: 10px !important; */
+  transition: transform 200ms;
+  /* border-radius: 10px; */
+  /* width: 200px;
+  height: 200px; */
+  /* margin: 0 auto; */
   /* , box-shadow 200ms ease 0s !important */
 }
 
-/* .card-item:hover {
-background: transparent;
-width: 300px;
-  height: 300px;
-transform: scaleX(0.5turn);
-box-shadow: border-box;
-} */
+.card-item:hover {
+  /* background: transparent; */
+  /* width: 300px; */
+  /* height: 300px; */
+  /* transform: scaleX(0.5turn); */
+  /* box-shadow: border-box; */
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05); /*#00d49F*/
+  transform: scale(1.05);
+  /* color: #00d49f; */
+  backdrop-filter: blur(1px);
+}
 
 table {
   font-family: "Kanit", sans-serif;
@@ -86,7 +97,8 @@ footer {
 footer div {
   background-color: rgb(13, 13, 12);
   border-top: 0.5px solid grey;
-  color: rgb(171, 156, 135) !important;
+  /* color: rgb(171, 156, 135) !important; */
+  color: #979189 !important;
 }
 
 footer img {

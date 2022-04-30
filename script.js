@@ -86,7 +86,7 @@ const renderProductList = (productArray) => {
                     type="number"
                     name="quantity"
                     min="1"
-                    class="form-control w-50 ms-5"
+                    class="form-control w-60 ms-5 quantity"
                   />
                 </div>
               </div>
@@ -99,3 +99,43 @@ const renderProductList = (productArray) => {
 };
 
 renderProductList(productArray);
+
+// 3. Display the selected products/products in the order details section when add to cart is clicked
+
+let basket = [];
+
+const handleAddToBasket = () => {
+  const quantityElms = document.querySelectorAll(".quantity");
+
+  //   console.log(quantityElms);
+
+  quantityElms.forEach((qtyElm, index) => {
+    if (qtyElm.value > 0) {
+      let obj = {
+        productID: productArray[index].productID,
+        productName: productArray[index].productName,
+        productQuantity: +qtyElm.value,
+        unitPrice: +productArray[index].unitPrice,
+        amount: 0,
+      };
+
+      if (basket.length === 0) {
+        basket.push(obj);
+        console.log(obj);
+      } else {
+        let found = false;
+
+        basket.forEach((basketItem) => {
+          if (basketItem.productID === obj.productID) {
+            found = true;
+            basketItem.productQuantity += +qtyElm.value;
+          }
+        });
+
+        if (!found) {
+          basket.push(obj);
+        }
+      }
+    }
+  });
+};
