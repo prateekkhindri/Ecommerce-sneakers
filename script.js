@@ -147,15 +147,13 @@ const handleAddToBasket = () => {
 const renderOrderDetails = () => {
   // 4.1 Total and grandTotal Calculation
 
+  let grandTotal = 0;
   basket.map((basketObj, index) => {
     basketObj.amount = basketObj.productQuantity * basketObj.unitPrice;
-  });
-
-  let grandTotal = 0;
-
-  basket.map((basketObj, index) => {
     grandTotal += basketObj.amount;
   });
+
+  // basket.map((basketObj, index) => {});
 
   let productOrdered = "";
   basket.forEach((basketObj, index) => {
