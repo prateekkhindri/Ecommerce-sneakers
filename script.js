@@ -100,7 +100,7 @@ const renderProductList = (productArray) => {
 
 renderProductList(productArray);
 
-// 3. Display the selected products/products in the order details section when add to cart is clicked
+// 3. Adding the products to the basket
 
 let basket = [];
 
@@ -121,7 +121,7 @@ const handleAddToBasket = () => {
 
       if (basket.length === 0) {
         basket.push(obj);
-        console.log(obj);
+        // console.log({ obj });
       } else {
         let found = false;
 
@@ -138,4 +138,51 @@ const handleAddToBasket = () => {
       }
     }
   });
+
+  renderOrderDetails();
+};
+
+// 4. Display the selected products/products in the order details section when add to cart is clicked
+
+const renderOrderDetails = () => {
+  // 4.1 Total and grandTotal Calculation
+
+  basket.map((basketObj, index) => {
+    basketObj.amount = basketObj.productQuantity * basketObj.unitPrice;
+  });
+
+  let grandTotal = 0;
+
+  basket.map((basketObj, index) => {
+    grandTotal += basketObj.amount;
+  });
+
+  let productOrdered = "";
+  basket.forEach((basketObj, index) => {
+    productOrdered += `
+    
+    <tr id = "${basketObj.productID}">
+              <td class = "align-middle">${
+                basketObj.productName.split(" ")[0]
+              }</td>
+              <td class = "align-middle">${basketObj.productQuantity}</td>
+              <td class = "align-middle right">${basketObj.unitPrice.toLocaleString()}</td>
+              <td class = "align-middle">${basketObj.amount.toLocaleString()}</td>
+              <td  colspan = "2">
+              <button class = "deleteBtn  ">
+                  <i class= "fa-solid fa-trash"></i>
+              </button>
+                &nbsp; 
+              <button class = "editBtn  ">
+                  <i class= "fa-solid fa-cart-shopping"></i>
+              </button>
+              
+              </td>
+            </tr>
+    `;
+  });
+
+  document.getElementById("tbody").innerHTML = productOrdered;
+
+  document.getElementById("total").innerHTML = grandTotal.toLocaleString();
 };
