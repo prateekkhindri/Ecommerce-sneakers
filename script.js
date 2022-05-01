@@ -164,10 +164,14 @@ const renderOrderDetails = () => {
                 basketObj.productName.split(" ")[0]
               }</td>
               <td class = "align-middle">${basketObj.productQuantity}</td>
-              <td class = "align-middle right">${basketObj.unitPrice.toLocaleString()}</td>
-              <td class = "align-middle">${basketObj.amount.toLocaleString()}</td>
+              <td class = "align-middle right">${basketObj.unitPrice.toLocaleString(
+                "en-AU"
+              )}</td>
+              <td class = "align-middle">${basketObj.amount.toLocaleString(
+                "en-AU"
+              )}</td>
               <td  colspan = "2">
-              <button class = "deleteBtn  ">
+              <button class = "deleteBtn" onclick="deleteSelectedProduct()">
                   <i class= "fa-solid fa-trash"></i>
               </button>
                 &nbsp; 
@@ -182,5 +186,15 @@ const renderOrderDetails = () => {
 
   document.getElementById("tbody").innerHTML = productOrdered;
 
-  document.getElementById("total").innerHTML = grandTotal.toLocaleString();
+  document.getElementById("total").innerHTML =
+    grandTotal.toLocaleString("en-AU");
+};
+
+// 5.1 Delete selection
+
+const deleteSelectedProduct = (item, index) => {
+  // console.log({ item });
+  basket.splice(index, 1);
+
+  renderOrderDetails();
 };
