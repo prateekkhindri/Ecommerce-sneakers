@@ -209,9 +209,17 @@ const deleteSelectedProduct = (item, index) => {
 };
 
 const editSelectedProduct = (index) => {
-  let qty = Prompt("Please enter the new quantity");
+  let qty = prompt("Please enter the new quantity");
+  // qty = +qty;
 
-  if (qty < 1) {
-    alert("Please enter the appropriate quantity");
+  if (qty === null) {
+    return;
+  } else if (qty < 1) {
+    alert("Please enter a valid quantity");
+    editSelectedProduct(index);
+  } else {
+    basket[index].productQuantity = qty;
   }
+
+  renderOrderDetails();
 };
