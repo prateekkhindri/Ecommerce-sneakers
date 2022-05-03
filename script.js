@@ -140,6 +140,14 @@ const handleAddToBasket = () => {
   });
 
   renderOrderDetails();
+
+  // 5. Clearing the form after quantity has been selected and added to cart
+
+  const inputField = document.querySelectorAll("input");
+
+  inputField.forEach((element) => {
+    element.value = null;
+  });
 };
 
 // 4. Display the selected products/products in the order details section when add to cart is clicked
@@ -171,11 +179,11 @@ const renderOrderDetails = () => {
                 "en-AU"
               )}</td>
               <td  colspan = "2">
-              <button class = "deleteBtn" onclick="deleteSelectedProduct()">
+              <button class = "deleteBtn" onclick="deleteSelectedProduct(${index})">
                   <i class= "fa-solid fa-trash"></i>
               </button>
                 &nbsp; 
-              <button class = "editBtn  ">
+              <button class = "editBtn" onclick="editSelectedProduct(${index})">
                   <i class= "fa-solid fa-cart-shopping"></i>
               </button>
               
@@ -193,8 +201,17 @@ const renderOrderDetails = () => {
 // 5.1 Delete selection
 
 const deleteSelectedProduct = (item, index) => {
-  // console.log({ item });
   basket.splice(index, 1);
 
+  // console.log(basket);
+
   renderOrderDetails();
+};
+
+const editSelectedProduct = (index) => {
+  let qty = Prompt("Please enter the new quantity");
+
+  if (qty < 1) {
+    alert("Please enter the appropriate quantity");
+  }
 };
