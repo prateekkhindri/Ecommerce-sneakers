@@ -22,17 +22,22 @@ tr span {
   font-size: 1.3rem !important;
 }
 
+th {
+  font-weight: lighter;
+}
+
 .section1 {
   min-height: 80vh;
 }
 
 .section1 .title-div {
-  background-color: rgba(151, 137, 137, 0.5) !important;
+  /* background-color: rgba(151, 137, 137, 0.5) !important; */
+  background-color: rgb(102, 96, 96) !important;
 }
 
-h2 {
+/* h2 {
   font-size: 1.3rem;
-}
+} */
 
 .center {
   margin-left: 50%;
@@ -45,7 +50,7 @@ form img {
   border-radius: 5px;
 }
 
-.card-item {
+.card {
   cursor: pointer;
   /* border-radius: 10px !important; */
   transition: transform 200ms;
@@ -56,8 +61,7 @@ form img {
   /* , box-shadow 200ms ease 0s !important */
 }
 
-.card-item:hover {
-  /* background: transparent; */
+.card:hover {
   /* width: 300px; */
   /* height: 300px; */
   /* transform: scaleX(0.5turn); */
@@ -66,12 +70,12 @@ form img {
   -webkit-transform: scale(1.05); /*#00d49F*/
   transform: scale(1.05);
   /* color: #00d49f; */
-  backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px); */
 }
 
-table {
+/* table {
   font-family: "Kanit", sans-serif;
-}
+} */
 
 th {
   font-weight: bold;
@@ -83,10 +87,10 @@ tfoot td {
   background-color: rgba(60, 61, 59, 0.899) !important;
 }
 
-.text-danger {
+/* .text-danger {
   color: rgb(255, 10, 10) !important;
   font-size: 1.6rem !important;
-}
+} */
 
 footer {
   font-family: "Kanit", sans-serif;
@@ -111,24 +115,24 @@ footer img {
 .deleteBtn {
   background: red;
   border: none;
-  border-radius: 60%;
-  min-height: 30px;
-  min-width: 30px;
+  border-radius: 7px;
+  min-height: 1rem;
+  min-width: 1.5rem;
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
 .editBtn {
   background: yellow;
   border: none;
-  border-radius: 60%;
-  min-height: 30px;
-  min-width: 30px;
+  border-radius: 7px;
+  min-height: 1rem;
+  min-width: 1.5rem;
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
 /* Media Query */
 
-@media (max-width: 1192px) {
+/* @media (max-width: 1192px) {
   form img {
     height: 160px !important;
   }
@@ -148,9 +152,9 @@ footer img {
   tfoot td {
     font-size: 1rem;
   }
-}
+} */
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .card-title {
     font-size: 0.8rem;
   }
@@ -175,9 +179,9 @@ footer img {
   .btn {
     font-size: smaller;
   }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   form img {
     height: 250px !important;
   }
@@ -209,6 +213,68 @@ footer img {
   .text-danger {
     font-size: 1rem !important;
   }
+} */
+
+@media (max-width: 1192px) {
+  form img {
+    height: 160px !important;
+  }
+
+  th {
+    font-size: 0.7rem;
+  }
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  tbody td,
+  span {
+    font-size: 0.8rem;
+  }
+
+  tfoot td {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-title {
+    font-size: 0.8rem;
+  }
+
+  th {
+    font-size: 0.8rem;
+  }
+  tbody td,
+  span {
+    font-size: 0.7rem !important;
+  }
+
+  tfoot td {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  form img {
+    height: 250px !important;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+
+  th {
+    font-size: 0.8rem;
+  }
+
+  tbody td,
+  span {
+    font-size: 0.6rem !important;
+  }
+
+  tfoot td {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -232,7 +298,7 @@ footer img {
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .btn {
@@ -243,9 +309,9 @@ footer img {
     font-size: 0.75rem !important;
   }
 
-  .text-danger {
+  /* .text-danger {
     font-size: 0.9rem !important;
-  }
+  } */
 
   footer {
     font-size: smaller;

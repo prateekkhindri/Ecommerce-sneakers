@@ -270,18 +270,27 @@
       <!-- Order details section -->
 
       <section
-        class="container-fluid text-light text-center my-2 text-uppercase order-details mx-0 px-1"
+        class="container-fluid mt-5 mb-5 bg-light text-dark text-center my-2 py-5 text-uppercase order-details"
       >
+        <!--container-fluid text-light text-center my-2 text-uppercase order-details mx-0 px-1-->
+        <!-- <hr /> -->
+        <h2 class="mb-4 pb-4 mt-2">Order Details</h2>
+        <!--class="py-1"-->
         <hr />
-        <h2 class="py-1">Order Details</h2>
-        <hr />
-        <table class="table text-center bg-dark text-light my-1 px-0">
-          <thead class="px-1">
-            <tr class="align-middle pb-3">
-              <th scope="col" class="align-middle">Desc</th>
-              <th scope="col" class="align-middle">Qty</th>
-              <th scope="col" class="align-middle">Price</th>
-              <th scope="col" class="verticle-align-middle">Total</th>
+        <table class="table text-center bg-dark text-light my-1">
+          <!--px-0-->
+          <thead class="mx-5">
+            <!--"px-1"-->
+            <tr>
+              <!--class="align-middle pb-3"-->
+              <th scope="col">Desc</th>
+              <!--"align-middle"-->
+              <th scope="col">Qty</th>
+              <!--"align-middle"-->
+              <th scope="col">Price</th>
+              <!--"align-middle"-->
+              <th scope="col" class="text-center">Total</th>
+              <!--"verticle-align-middle"-->
               <th scope="col" colspan="2">Action</th>
             </tr>
           </thead>
@@ -294,10 +303,10 @@
               <td>Action</td>
             </tr> -->
           </tbody>
-          <tfoot>
-            <!-- <td ></td> -->
-            <td colspan="3" class="fw-bold">Total (AUD)</td>
-            <td colspan="2" class="right"><span id="total"></span></td>
+          <tfoot class="bg-dark">
+            <td colspan="2"></td>
+            <td class="fw-bold">Total</td>
+            <td colspan="2" class="fw-bold">AUD <span id="total"></span></td>
             <td></td>
           </tfoot>
         </table>

@@ -168,25 +168,18 @@ const renderOrderDetails = () => {
     productOrdered += `
     
     <tr id = "${basketObj.productID}">
-              <td class = "align-middle">${
-                basketObj.productName.split(" ")[0]
-              }</td>
-              <td class = "align-middle">${basketObj.productQuantity}</td>
-              <td class = "align-middle right">${basketObj.unitPrice.toLocaleString(
-                "en-AU"
-              )}</td>
-              <td class = "align-middle">${basketObj.amount.toLocaleString(
-                "en-AU"
-              )}</td>
+              <td >${basketObj.productName.split(" ")[0]}</td>
+              <td >${basketObj.productQuantity}</td>
+              <td >${basketObj.unitPrice.toLocaleString("en-AU")}</td>
+              <td >${basketObj.amount.toLocaleString("en-AU")}</td>
               <td  colspan = "2">
-              <button class = "deleteBtn" onclick="deleteSelectedProduct(${index})">
-                  <i class= "fa-solid fa-trash"></i>
+              <button class="deleteBtn" onclick="deleteSelectedProduct(${index})">
+                  <i class="fa-solid fa-trash"></i>
               </button>
-                &nbsp; 
-              <button class = "editBtn" onclick="editSelectedProduct(${index})">
-                  <i class= "fa-solid fa-cart-shopping"></i>
+                &nbsp; &nbsp; 
+              <button class="editBtn" onclick="editSelectedProduct(${index})">
+                  <i class="fa-solid fa-cart-shopping"></i>
               </button>
-              
               </td>
             </tr>
     `;
