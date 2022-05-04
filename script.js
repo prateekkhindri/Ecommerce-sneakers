@@ -166,21 +166,22 @@ const renderOrderDetails = () => {
   let productOrdered = "";
   basket.forEach((basketObj, index) => {
     productOrdered += `
-    
-    <tr id = "${basketObj.productID}">
-              <td >${basketObj.productName.split(" ")[0]}</td>
-              <td >${basketObj.productQuantity}</td>
-              <td >${basketObj.unitPrice.toLocaleString("en-AU")}</td>
-              <td >${basketObj.amount.toLocaleString("en-AU")}</td>
-              <td  colspan = "2">
+    <tr id="${basketObj.productID}">
+              <td>${basketObj.productName.split(" ")[0]}</td>
+              <td>${basketObj.productQuantity}</td>
+              <td>${basketObj.unitPrice.toLocaleString("en-AU")}</td>
+              <td>${basketObj.amount.toLocaleString("en-AU")}</td>
+              <div class="parentBtn">
+              <td colspan="3">
               <button class="deleteBtn" onclick="deleteSelectedProduct(${index})">
                   <i class="fa-solid fa-trash"></i>
               </button>
-                &nbsp; &nbsp; 
+              &nbsp;&nbsp;&nbsp;
               <button class="editBtn" onclick="editSelectedProduct(${index})">
                   <i class="fa-solid fa-cart-shopping"></i>
               </button>
               </td>
+              </div>
             </tr>
     `;
   });

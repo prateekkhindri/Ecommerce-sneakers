@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Orbitron:wght@400;500;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   overflow-x: hidden !important;
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: "Orbitron", sans-serif;
-  min-width: 100% !important;
+  /* min-width: 100% !important; */
 }
 
 tr td,
@@ -50,7 +50,7 @@ form img {
   border-radius: 5px;
 }
 
-.card {
+.card img {
   cursor: pointer;
   /* border-radius: 10px !important; */
   transition: transform 200ms;
@@ -61,7 +61,7 @@ form img {
   /* , box-shadow 200ms ease 0s !important */
 }
 
-.card:hover {
+.card img:hover {
   /* width: 300px; */
   /* height: 300px; */
   /* transform: scaleX(0.5turn); */
@@ -70,7 +70,7 @@ form img {
   -webkit-transform: scale(1.05); /*#00d49F*/
   transform: scale(1.05);
   /* color: #00d49f; */
-  /* backdrop-filter: blur(1px); */
+  backdrop-filter: blur(10px);
 }
 
 /* table {
@@ -105,19 +105,26 @@ footer div {
   color: #979189 !important;
 }
 
-footer img {
+/* footer img {
   width: 30%;
   max-width: 45px;
   margin-top: 1rem;
   margin-bottom: 0.4rem;
-}
+} */
+
+/* td.parentBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 50px;
+} */
 
 .deleteBtn {
   background: red;
   border: none;
   border-radius: 7px;
-  min-height: 1rem;
-  min-width: 1.5rem;
+  min-height: 22px;
+  min-width: 22px;
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -125,8 +132,8 @@ footer img {
   background: yellow;
   border: none;
   border-radius: 7px;
-  min-height: 1rem;
-  min-width: 1.5rem;
+  min-height: 22px;
+  min-width: 22px;
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -277,7 +284,11 @@ footer img {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+  /* table.table {
+    width: 100px;
+    height: 100px;
+  } */
   form img {
     height: 250px !important;
   }
